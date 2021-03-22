@@ -17,7 +17,7 @@ class ImmobilierController extends AbstractController
     }
 
     /**
-     * @Route("/search", name="welcome")
+     * @Route("/search", name="immobilier.search")
      */
     public function search(): Response
     {
@@ -25,7 +25,7 @@ class ImmobilierController extends AbstractController
     }
 
     /**
-     * @Route("/estimate", name="welcome")
+     * @Route("/estimate", name="immobilier.estimate")
      */
     public function estimate(): Response
     {
