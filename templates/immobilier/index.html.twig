@@ -1,10 +1,37 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %}Accueil {{ parent() }}{% endblock %}
+ 
+{% block body %}
 
-{% block title %}Accueil{% endblock %}
+<div>
+    <h1 class="m-4"> Liste des biens Immobiliers </h1>
 
-{% block body %} 
+    <div class="row">
+    {% for property in properties %}
+    
+        <div class="col-4 my-4">
+            <div class="card rounded shadow" style="width: 18rem;">
+                <a href={{ path('immmobilier.show', {id:property.id}) }} class="text-decoration-none text-dark property-card">
+                    <img src="https://via.placeholder.com/250x180" class="card-img-top" alt="image placeholder">
+                    <div class="card-body">
+                        <h3>
+                            {{ property.getTitle }}
+                        </h3>
+                        <p class="card-text">
+                            {{ property.description }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+            
+    {% endfor %}
+    </div>
 
-<div >
-    <h1>Liste des biens Immobiliers</h1> 
+    <div class="navigation">
+        {{ knp_pagination_render(properties) }}
+    </div>
+
+
+
 </div>
 {% endblock %}

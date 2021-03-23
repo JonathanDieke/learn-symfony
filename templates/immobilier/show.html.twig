@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Propriété  1
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+	<div>
+		<h2 class="my-4">
+			Détails de la Propriété :
+        </h2>
+
+		<div class="">
+
+            <div class="card mb-3" style="max-width: auto">
+                <div class="row ">
+                    <div class="row col-md-6">
+                        <img class="col" src="https://via.placeholder.com/{{ property.getImagePath }}" alt="placeholder">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre : {{ property.title }}</h5>
+                            <p class="card-text">Description {{ property.description }} </p>
+                            <p class="card-text float-end">
+                                <small class="text-muted">Date de mise en ligne : {{ property.updatedAt | date("d/m/Y") }}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+		</div>
+
+        <div>
+            <h5>Vous pourriez aimez aussi :</h5>
+            <ul class="row">
+                <a class="col-3" href="#">
+                    <li>Card Suggestion 1</li>
+                </a>
+                <a class="col-3" href="#">
+                    <li>Card Suggestion 2</li>
+                </a>
+                <a class="col-3" href="#">
+                    <li>Card Suggestion 3</li>
+                </a>
+            </ul>
+        </div>
+
+
+
+	</div>
+{% endblock %}
